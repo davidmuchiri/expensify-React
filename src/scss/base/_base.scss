@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: $color-dark-violet-01;
+}
+
+body {
+    box-sizing: inherit;
+    font-family: 'nunito', sans-serif;
+    font-weight: 400;
+    font-size: $base-font-size;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
