@@ -14,17 +14,22 @@
 		"normalize.css": "^8.0.0",
 		"react": "^16.3.2",
 		"react-dom": "^16.3.2",
-		"react-modal": "^3.4.4"
+		"react-modal": "^3.4.4",
+		"react-redux": "^5.0.7",
+		"redux": "^4.0.0",
+		"uuid": "^3.2.1"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.24.1",
 		"babel-core": "^6.25.0",
 		"babel-loader": "^7.1.1",
 		"babel-plugin-transform-class-properties": "^6.24.1",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
 		"babel-preset-env": "^1.5.2",
 		"babel-preset-react": "^6.24.1",
 		"css-loader": "^0.28.11",
 		"node-sass": "^4.9.0",
+		"react-router-dom": "^4.2.2",
 		"sass-loader": "^7.0.1",
 		"style-loader": "^0.21.0",
 		"webpack": "^3.1.0",
