@@ -1,4 +1,3 @@
-import { createStore, combineReducers } from 'redux';
 const expensesReducersDefaultState = [];
 
 //EXPENSES REDUCERS

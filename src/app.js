@@ -17,22 +17,25 @@ store.subscribe(() => {
 
 store.dispatch(
 	addExpense({
-		description: 'electric bill',
+		description: 'water bill',
 		amount: 400,
-		createdAt: new Date().getMilliseconds()
+		createdAt: new Date().getTime()
 	})
 );
 store.dispatch(
 	addExpense({
 		description: 'gas bill',
-		amount: 30000,
-		createdAt: new Date().getMilliseconds()
+		amount: 1500,
+		createdAt: 1000
 	})
 );
-store.dispatch(setTextFilter('gas'));
-setTimeout(() => {
-	store.dispatch(setTextFilter('bill'));
-}, 3000);
+store.dispatch(
+	addExpense({
+		description: 'rent bill',
+		amount: 4000,
+		createdAt: new Date().getTime()
+	})
+);
 
 const state = store.getState();
 const visibleExpense = getVisibleExpense(state.expenses, state.filters);
