@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render an item 1`] = `
+<ul>
+  <li>
+    <h5>
+      description: 
+      Rent
+    </h5>
+    <p>
+      amount: 
+      109500
+    </p>
+    <p>
+      created at:
+       
+      December 28th 1969, 3:00:00 am
+    </p>
+    <Link
+      replace={false}
+      to="/edit/2"
+    >
+      <p>
+        Edit
+      </p>
+    </Link>
+  </li>
+</ul>
+`;

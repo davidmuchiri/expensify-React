@@ -8,6 +8,7 @@ import getVisibleExpense from './js/redux/selectors/expensesfilter';
 import 'normalize.css/normalize.css';
 import AppRouter from './js/routes/AppRouter';
 import './scss/styles.scss';
+import 'react-dates/lib/css/_datepicker.css';
 
 const store = configureStore();
 
