@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import ExpenseForm from '../../React-components/ExpenseForm';
 import expenses from '../fixtures/testData';
 import 'react-dates/initialize';
-import moment from 'moment';
+
 
 test('should render ExpenseForm correctly', () => {
 	const wrapper = shallow(<ExpenseForm />);

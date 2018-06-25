@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './js/redux/store/configStore';
 import { addExpense } from './js/redux/actions/expenses';
-import { setTextFilter } from './js/redux/actions/filters';
 import getVisibleExpense from './js/redux/selectors/expensesfilter';
 import 'normalize.css/normalize.css';
 import AppRouter from './js/routes/AppRouter';
