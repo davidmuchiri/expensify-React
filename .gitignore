@@ -1,1 +1,5 @@
 node_modules/
+dist/app.bundle.js
+dist/app.bundle.js.map
+dist/styles.css
+dist/styles.css.map
