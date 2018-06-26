@@ -9,12 +9,11 @@ exports[`should render an item 1`] = `
     </h5>
     <p>
       amount: 
-      109500
+      $109,500.00
     </p>
     <p>
-      created at:
-       
-      December 28th 1969, 3:00:00 am
+      created at: 
+      December 28th, 1969
     </p>
     <Link
       replace={false}
