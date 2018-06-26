@@ -4,7 +4,6 @@ import ExpenseForm from '../../React-components/ExpenseForm';
 import expenses from '../fixtures/testData';
 import 'react-dates/initialize';
 
-
 test('should render ExpenseForm correctly', () => {
 	const wrapper = shallow(<ExpenseForm />);
 	expect(wrapper).toMatchSnapshot();
@@ -81,7 +80,7 @@ test('should call onSubmit prop for valid form submission', () => {
 	expect(wrapper.state('error')).toBe('');
 	expect(onSubmitSpy).toHaveBeenCalledWith({
 		description: expenses[0].description,
-		amount: expenses[0].amount.toFixed(2),
+		amount: expenses[0].amount,
 		createdAt: expenses[0].createdAt,
 		note: expenses[0].note
 	});

@@ -1,5 +1,4 @@
 import moment from 'moment';
-
 const expenses = [
 	{
 		id: '1',
