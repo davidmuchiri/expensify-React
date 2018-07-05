@@ -8,12 +8,9 @@ import 'normalize.css/normalize.css';
 import AppRouter from './js/routes/AppRouter';
 import './scss/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './db/firebase';
 
 const store = configureStore();
-
-store.subscribe(() => {
-	console.log(store.getState());
-});
 
 store.dispatch(
 	addExpense({
@@ -39,7 +36,6 @@ store.dispatch(
 
 const state = store.getState();
 const visibleExpense = getVisibleExpense(state.expenses, state.filters);
-console.log(visibleExpense);
 
 const jsx = (
 	<Provider store={store}>
