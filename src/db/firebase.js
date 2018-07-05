@@ -1,11 +1,12 @@
 import * as firebase from 'firebase';
+import dbconfig from './config';
 var config = {
-	apiKey: 'AIzaSyD8IxMazZ9HThbtTMMCqDUzG4zdUSo9y1U',
-	authDomain: 'expensify-307be.firebaseapp.com',
-	databaseURL: 'https://expensify-307be.firebaseio.com',
-	projectId: 'expensify-307be',
-	storageBucket: 'expensify-307be.appspot.com',
-	messagingSenderId: '333513489322'
+	apiKey: dbconfig.key,
+	authDomain: dbconfig.authDomain,
+	databaseURL: dbconfig.databaseURL,
+	projectId: dbconfig.projectId,
+	storageBucket: dbconfig.storageBucket,
+	messagingSenderId: dbconfig.messagingSenderId
 };
 
 firebase.initializeApp(config);
