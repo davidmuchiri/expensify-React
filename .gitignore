@@ -1,3 +1,5 @@
 node_modules/
 dist/assetsgit
 src/db/config.js
+.env.development
+.env.test

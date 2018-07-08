@@ -1,22 +1,6 @@
-import uuid from 'uuid';
 import database from '../../../db/firebase';
-// export const addExpense = ({
-// 	description = '',
-// 	note = '',
-// 	amount = 0,
-// 	createdAt = 0
-// } = {}) => ({
-// 	type: 'ADD_EXPENSE',
-// 	expenses: {
-// 		id: uuid(),
-// 		description,
-// 		note,
-// 		amount,
-// 		createdAt
-// 	}
-// });
 
-export const addExpense = expense => ({ type: 'ADD_EXPENSE', expense });
+export const addExpense = expenses => ({ type: 'ADD_EXPENSE', expenses });
 
 export const startAddExpense = (expenseData = {}) => {
 	return dispatch => {
@@ -34,7 +18,7 @@ export const startAddExpense = (expenseData = {}) => {
 			createdAt
 		};
 
-		database
+		return database
 			.ref('expenses')
 			.push(expense)
 			.then(ref => {
@@ -49,3 +33,38 @@ export const editExpense = (id, updates) => ({
 	id,
 	updates
 });
+
+/**
+ * @description how it currently works
+ * component calls action generator
+ * action generator returns object
+ * component dispatches object
+ * redux store changes
+ */
+
+/**
+ * @description how it will work
+ * component calls action generator
+ * action generator returns function
+ * component dispatches function
+ * function runs (has the ability to dispatch other actios and do whatever it wants)
+ */
+
+/**
+ * @description before
+ * export const addExpense = ({
+	description = '',
+	note = '',
+	amount = 0,
+	createdAt = 0
+} = {}) => ({
+	type: 'ADD_EXPENSE',
+	expenses: {
+		id: uuid(),
+		description,
+		note,
+		amount,
+		createdAt
+	}
+});
+ */
