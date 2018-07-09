@@ -1,15 +1,17 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import {
+	startRemoveExpense,
 	startAddExpense,
 	addExpense,
 	editExpense,
 	removeExpense,
 	setExpenses,
-	startSetExpenses
+	startSetExpenses,
+	startEditExpense
 } from '../../redux/actions/expenses';
 import expenses from '../fixtures/testData';
-import db from '../../../db/firebase';
+import database from '../../../db/firebase';
 
 const createMockStore = configureMockStore([thunk]);
 
@@ -18,7 +20,8 @@ beforeEach(done => {
 	expenses.forEach(({ id, description, note, amount, createdAt }) => {
 		expensesData[id] = { description, note, amount, createdAt };
 	});
-	db.ref('expenses')
+	database
+		.ref('expenses')
 		.set(expensesData)
 		.then(() => done());
 });
@@ -30,6 +33,25 @@ test('should setup remove expense action object', () => {
 		id: '123abc'
 	});
 });
+
+test('should remove expense from firebase and store', done => {
+	const store = createMockStore({});
+	const id = expenses[2].id;
+	store.dispatch(startRemoveExpense({ id }))
+		.then(() => {
+			const actions = store.getActions();
+			expect(actions[0]).toEqual({
+				type: 'REMOVE_EXPENSE',
+				id
+			});
+			return database.ref(`expenses/${id}`).once('value');
+		})
+		.then(snapshot => {
+			expect(snapshot.val()).toBeFalsy();
+			done();
+		});
+});
+
 test('should setup editExpense action object', () => {
 	const action = editExpense('123abc', {
 		id: 'abc',
@@ -40,6 +62,25 @@ test('should setup editExpense action object', () => {
 		type: 'EDIT_EXPENSE',
 		id: '123abc',
 		updates: { id: 'abc', description: 'rent', amount: 300 }
+	});
+});
+
+test('should edit expense from firebase and store', done => {
+	const store = createMockStore({});
+	const id = expenses[2].id;
+	const updates = {
+		description: 'him',
+		amount: 10,
+		createdAt: 5000
+	};
+	store.dispatch(startEditExpense(id, updates)).then(() => {
+		const actions = store.getActions();
+		expect(actions[0]).toEqual({
+			type: 'EDIT_EXPENSE',
+			id: expenses[2].id,
+			updates
+		});
+		done();
 	});
 });
 
@@ -70,8 +111,7 @@ test('should add expense to database and store', done => {
 				}
 			});
 
-			//promise chaining.. the success value of the next then call is what is returned by this promise
-			return db
+			return database
 				.ref(`expenses/${actions[0].expenses.id}`)
 				.once('value');
 		})
@@ -80,6 +120,7 @@ test('should add expense to database and store', done => {
 			done();
 		});
 });
+
 test('should add expense with defaults to database and store', done => {
 	const store = createMockStore({});
 	const expenseDefault = {
@@ -99,7 +140,7 @@ test('should add expense with defaults to database and store', done => {
 				}
 			});
 
-			return db
+			return database
 				.ref(`expenses/${actions[0].expenses.id}`)
 				.once('value');
 		})
@@ -108,6 +149,7 @@ test('should add expense with defaults to database and store', done => {
 			done();
 		});
 });
+
 test('should setup set expenses action object with data', () => {
 	const action = setExpenses(expenses);
 	expect(action).toEqual({ type: 'SET_EXPENSES', expenses });
