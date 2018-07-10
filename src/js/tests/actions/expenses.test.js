@@ -73,15 +73,21 @@ test('should edit expense from firebase and store', done => {
 		amount: 10,
 		createdAt: 5000
 	};
-	store.dispatch(startEditExpense(id, updates)).then(() => {
-		const actions = store.getActions();
-		expect(actions[0]).toEqual({
-			type: 'EDIT_EXPENSE',
-			id: expenses[2].id,
-			updates
+	store.dispatch(startEditExpense(id, updates))
+		.then(() => {
+			const actions = store.getActions();
+			expect(actions[0]).toEqual({
+				type: 'EDIT_EXPENSE',
+				id,
+				updates
+			});
+
+			return database.ref(`expenses/${id}`).once('value');
+		})
+		.then(snapshot => {
+			expect(snapshot.val().amount).toBe(updates.amount);
+			done();
 		});
-		done();
-	});
 });
 
 test('should setup add Expense action object with provided values', () => {
