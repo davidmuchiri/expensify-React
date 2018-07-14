@@ -9,12 +9,12 @@ import {
 export class EditExpensePage extends Component {
 	onSubmit = expense => {
 		this.props.startEditExpense(this.props.expense.id, expense);
-		this.props.history.push('/');
+		this.props.history.push('/dashboard');
 	};
 
 	onRemove = () => {
 		this.props.startRemoveExpense({ id: this.props.expense.id });
-		this.props.history.push('/');
+		this.props.history.push('/dashboard');
 	};
 
 	render() {

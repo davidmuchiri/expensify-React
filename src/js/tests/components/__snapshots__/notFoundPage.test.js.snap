@@ -5,7 +5,7 @@ exports[`should render the not found page 1`] = `
   404! 
   <Link
     replace={false}
-    to="/"
+    to="/dashboard"
   >
     Go Home
   </Link>

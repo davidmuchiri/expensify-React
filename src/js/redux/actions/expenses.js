@@ -2,7 +2,8 @@ import database from '../../../db/firebase';
 
 export const addExpense = expenses => ({ type: 'ADD_EXPENSE', expenses });
 export const startAddExpense = (expenseData = {}) => {
-	return dispatch => {
+	return (dispatch, getState) => {
+		const uid = getState().auth.uid;
 		const {
 			description = '',
 			note = '',
@@ -18,7 +19,7 @@ export const startAddExpense = (expenseData = {}) => {
 		};
 
 		return database
-			.ref('expenses')
+			.ref(`users/${uid}/expenses`)
 			.push(expense)
 			.then(ref => {
 				dispatch(addExpense({ id: ref.key, ...expense }));
@@ -31,9 +32,10 @@ export const startAddExpense = (expenseData = {}) => {
 
 export const removeExpense = ({ id } = {}) => ({ type: 'REMOVE_EXPENSE', id });
 export const startRemoveExpense = ({ id } = {}) => {
-	return dispatch => {
+	return (dispatch, getState) => {
+		const uid = getState().auth.uid;
 		return database
-			.ref(`expenses/${id}`)
+			.ref(`users/${uid}/expenses/${id}`)
 			.remove()
 			.then(() => dispatch(removeExpense({ id })))
 			.catch(err =>
@@ -45,9 +47,10 @@ export const startRemoveExpense = ({ id } = {}) => {
 //SET_EXPENSES
 export const setExpenses = expenses => ({ type: 'SET_EXPENSES', expenses });
 export const startSetExpenses = () => {
-	return dispatch => {
+	return (dispatch, getState) => {
+		const uid = getState().auth.uid;
 		return database
-			.ref('expenses')
+			.ref(`users/${uid}/expenses`)
 			.once('value')
 			.then(snapshot => {
 				const expenses = [];
@@ -71,9 +74,10 @@ export const editExpense = (id, updates) => ({
 	updates
 });
 export const startEditExpense = (id, updates) => {
-	return dispatch => {
+	return (dispatch, getState) => {
+		const uid = getState().auth.uid;
 		return database
-			.ref(`expenses/${id}`)
+			.ref(`users/${uid}/expenses/${id}`)
 			.update(updates)
 			.then(() => dispatch(editExpense(id, updates)))
 			.catch(err =>
