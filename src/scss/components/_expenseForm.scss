@@ -1,94 +1,94 @@
 .expenseForm {
-    padding: 1.5rem;
-    border: 1px solid #f4f4f4;
-    box-shadow: $panel-box-shadow;
-    margin-top: 2rem;
-    background: #ffffff;
-    border-radius: 0.3rem;
-    &__form {
-        border-radius: 0.3rem;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-    }
-    &__label {
-        color: lighten($color: $color_blue_01, $amount: 30%);
-        font-size: 1.6rem;
-        font-weight: 400;
-        text-transform: capitalize;
-    }
-    &__input {
-        padding: 0.8rem;
-        border: none;
-        border-radius: 0.3rem;
-        width: 100%;
-        color: $color_blue_01;
-        font-size: 1.8rem;
-        font-weight: 400;
-        background: #f4f4f4;
-        &::placeholder {
-            color: $color_blue_01;
-            font-size: 1.8rem;
-            font-weight: 400;
-        }
-    }
-    &__primary {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-        @include responsive(tab-port) {
-            flex-direction: column;
-        }
-    }
-    &__buttons {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-        @include responsive(phone) {
-            flex-direction: column;
-            height: 5rem;
-            width: 100%;
-            justify-content: space-between;
-        }
-    }
-    &__textarea {
-        height: 7rem;
-        border: none;
-        border-radius: 0.3rem;
-        padding: 0.5rem;
-        color: $color_blue_01;
-        font-size: 1.8rem;
-        background: #f4f4f4;
-        font-weight: 400;
-        margin: 1.5rem 0;
-    }
-    &__btn {
-        align-self: flex-start;
-        @include responsive(phone) {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-    }
-    .error {
-        width: 100%;
-        padding: 0.5rem 1rem;
-        background: $color_red_pink_01;
-        color: #ffffff;
-        border-radius: 0.3rem;
-        font-size: 1.6rem;
-        font-weight: 500;
-    }
+	padding: 1.5rem;
+	border: 1px solid #f4f4f4;
+	box-shadow: $panel-box-shadow;
+	margin-top: 2rem;
+	background: #ffffff;
+	border-radius: 0.3rem;
+	&__form {
+		border-radius: 0.3rem;
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+	}
+	&__label {
+		color: lighten($color: $color_blue_01, $amount: 30%);
+		font-size: 1.6rem;
+		font-weight: 400;
+		text-transform: capitalize;
+	}
+	&__input {
+		padding: 0.8rem;
+		border: none;
+		border-radius: 0.3rem;
+		width: 100%;
+		color: $color_blue_01;
+		font-size: 1.8rem;
+		font-weight: 400;
+		background: #f4f4f4;
+		&::placeholder {
+			color: $color_blue_01;
+			font-size: 1.8rem;
+			font-weight: 400;
+		}
+	}
+	&__primary {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+		@include responsive(tab-port) {
+			flex-direction: column;
+		}
+	}
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+		@include responsive(phone) {
+			flex-direction: column;
+			height: 5rem;
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+	&__textarea {
+		height: 7rem;
+		border: none;
+		border-radius: 0.3rem;
+		padding: 0.5rem;
+		color: $color_blue_01;
+		font-size: 1.8rem;
+		background: #f4f4f4;
+		font-weight: 400;
+		margin: 1.5rem 0;
+	}
+	&__btn {
+		align-self: flex-start;
+		@include responsive(phone) {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+	}
+	.error {
+		width: 100%;
+		padding: 0.5rem 1rem;
+		background: $color_red_pink_01;
+		color: #ffffff;
+		border-radius: 0.3rem;
+		font-size: 1.6rem;
+		font-weight: 500;
+	}
 }
 
 .form_control {
-    display: flex;
-    flex-direction: column;
-    width: 48%;
-    padding: 0.3rem 0;
-    align-items: flex-start;
-    justify-content: center;
-    @include responsive(tab-port) {
-        width: 100%;
-    }
+	display: flex;
+	flex-direction: column;
+	width: 48%;
+	padding: 0.3rem 0;
+	align-items: flex-start;
+	justify-content: center;
+	@include responsive(tab-port) {
+		width: 100%;
+	}
 }
