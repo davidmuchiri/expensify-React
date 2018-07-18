@@ -1,55 +1,52 @@
 .DateRangePicker {
-    width: 28rem !important;
-    @include responsive(tab-land) {
-        width: 45% !important;
-    }
-    @include responsive(tab-port) {
-        width: 100% !important;
-    }
+	width: 28rem !important;
+	@include responsive(tab-land) {
+		width: 45% !important;
+	}
+	@include responsive(tab-port) {
+		width: 100% !important;
+	}
 }
 
 .DateRangePickerInput {
-    height: 3.3rem;
-    background: #f4f4f4 !important;
-    display: flex !important;
-    width: 100%;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 1rem !important;
-    border: none !important;
-    box-shadow: $panel-box-shadow !important;
-    &__withBorder {
-        border-radius: 0.3rem !important;
-    }
-    @include responsive(phone) {
-        height: 2.8rem;
-    }
+	height: 33px;
+	background: #f4f4f4 !important;
+	display: flex !important;
+	width: 100%;
+	align-items: center !important;
+	justify-content: space-between !important;
+	padding: 1rem !important;
+	border: none !important;
+	box-shadow: $panel-box-shadow !important;
+	&__withBorder {
+		border-radius: 0.3rem !important;
+	}
 }
 
 .SingleDatePickerInput {
-    width: max-content !important;
-    border-radius: 0.3rem !important;
-    display: flex !important;
-    align-self: flex-start !important;
-    border: none !important;
-    background: transparent !important;
+	width: max-content !important;
+	border-radius: 0.3rem !important;
+	display: flex !important;
+	align-self: flex-start !important;
+	border: none !important;
+	background: transparent !important;
 }
 
 .DateInput {
-    width: 13rem !important;
-    @include responsive(tab-land) {
-        width: 50% !important;
-    }
-    @include responsive(phone) {
-        width: 40% 1important;
-    }
+	width: 13rem !important;
+	@include responsive(tab-land) {
+		width: 50% !important;
+	}
+	@include responsive(phone) {
+		width: 40% 1important;
+	}
 }
 
 .DateInput_input {
-    color: $color_white_01;
-    background-color: $color_blue_01;
-    @include responsive(phone) {
-        padding: 0.3rem 0 !important;
-        font-size: 1rem !important;
-    }
+	color: $color_white_01;
+	background-color: $color_blue_01;
+	@include responsive(phone) {
+		padding: 0.3rem 0 !important;
+		font-size: 1rem !important;
+	}
 }
