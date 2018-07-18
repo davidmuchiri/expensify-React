@@ -41,7 +41,6 @@ export class ExpenseListFilters extends Component {
 		return (
 			<div className="filters">
 				<div className="filters__search">
-					<FaSearch className="icon icon__search" />
 					<input
 						type="text"
 						value={this.props.filters.text}
