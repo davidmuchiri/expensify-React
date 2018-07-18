@@ -1,0 +1,51 @@
+.collection {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: #ffffff;
+	box-shadow: $panel-box-shadow;
+	border-radius: 0.3rem;
+	&__item {
+		border: 1px solid #f4f4f4;
+		padding: 1rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&:not(:last-of-type) {
+			border-bottom: none;
+		}
+		&--primary {
+			.description {
+				font-size: 2rem;
+				color: $color_blue_01;
+				text-transform: capitalize;
+				margin-right: 1rem;
+			}
+			.amount {
+				color: $color_blue_01;
+				font-weight: 500;
+				font-size: 1.8rem;
+			}
+			.note {
+				border: 1px solid #f4f4f4;
+				padding: 0.3rem;
+				border-radius: 0.3rem;
+				background: $color_white_01;
+				color: $color_blue_01;
+				font-weight: 500;
+				font-size: 1.6rem;
+			}
+		}
+		&--secondary {
+			display: flex;
+			justify-content: space-around;
+			flex-direction: column;
+			align-self: stretch;
+			align-items: flex-end; //background: $color_blue_01;
+			&__text {
+				color: lighten($color: $color_grey_01, $amount: 30%);
+				font-size: 1.4rem;
+			}
+		}
+	}
+}

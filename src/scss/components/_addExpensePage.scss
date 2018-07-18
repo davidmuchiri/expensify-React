@@ -1,0 +1,28 @@
+body {
+	background: #f4f4f4;
+}
+
+.addExpensepage {
+	&__panel {
+		height: 4rem;
+		border: 1px solid #f4f4f4;
+		border-radius: 0.3rem;
+		background: #ffffff;
+		box-shadow: $panel-box-shadow;
+		display: flex;
+		align-items: center;
+		&--link {
+			display: flex;
+			align-items: center;
+			background-color: $color_white_01;
+			height: 100%;
+			padding: 0 0.3rem;
+			margin-right: 1rem;
+		}
+	}
+	&__title {
+		color: $color_blue_01;
+		font-size: 2.2rem;
+		font-weight: 600;
+	}
+}

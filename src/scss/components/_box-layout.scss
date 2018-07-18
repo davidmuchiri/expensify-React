@@ -1,0 +1,43 @@
+.box-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("/images/bg.jpg");
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-position: top;
+    background-size: cover;
+    &__box {
+        background: fade-out($color: white, $amount: 0.15);
+        position: relative;
+        border-radius: 0.3rem;
+        display: flex;
+        height: 15rem;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+    &__header {
+        margin: auto;
+    }
+    &__title {
+        margin: 0 0 $s-size 0;
+        line-height: 1;
+        align-self: flex-start;
+        justify-self: flex-start;
+        font-weight: 700;
+        color: $color_blue_01;
+    }
+    &__subtitle {
+        font-weight: 500;
+        color: $color_grey_02;
+    }
+    &__btn {
+        &:focus {
+            box-shadow: none;
+            transform: translateY(0.2rem);
+            outline: none;
+        }
+    }
+}

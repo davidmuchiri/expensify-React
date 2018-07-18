@@ -10,12 +10,25 @@ html {
     font-size: 62.5%;
     overflow-x: hidden;
     box-sizing: border-box;
+    @include responsive(phone) {
+        font-size: 50%;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
 }
 
 body {
     box-sizing: inherit;
-    font-family: 'nunito', sans-serif;
+    font-family: "nunito", sans-serif;
     font-weight: 400;
+    line-height: 1.6;
 }
 
 button {

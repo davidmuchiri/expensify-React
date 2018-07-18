@@ -1,0 +1,41 @@
+.icon {
+	height: 1.8rem;
+	width: 1.8rem;
+	cursor: pointer;
+	&__back,
+	&__update,
+	&__add,
+	&__signout,
+	&__search,
+	&__arrowDown {
+		margin-right: 0.3rem;
+		height: 1.6rem;
+		width: 1.6rem;
+		margin: 0 0.5rem;
+	}
+	&__delete {
+		margin-left: 0.3rem;
+		width: 1.6rem;
+		height: 1.6rem;
+	}
+	&__edit {
+		fill: $color_yellow_01;
+		display: flex;
+		align-self: center;
+		justify-self: center;
+	}
+	&__close {
+		fill: $color_red_pink_01;
+	}
+	&__search {
+		position: absolute;
+		top: 30%;
+		fill: $color_blue_01;
+	}
+	&__arrowDown {
+		position: absolute;
+		top: 30%;
+		right: 0.2rem;
+		fill: $color_blue_01;
+	}
+}

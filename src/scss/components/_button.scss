@@ -1,0 +1,43 @@
+.btn {
+	border: none;
+	margin: 0;
+	padding: 0.9rem 1.8rem;
+	color: #fff;
+	background-color: $color_orange_01;
+	border-radius: 0.3rem;
+	font-weight: 500;
+	font-size: 1.8rem;
+	display: flex;
+	box-shadow: $box-shadow;
+	align-items: center;
+	justify-content: space-between;
+	@include responsive(phone) {
+		padding: 0.6rem 1.6rem;
+	}
+	&:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+	&--Login {
+		background: $color_blue_02;
+		border-radius: 30rem;
+		color: #fff;
+		padding: 0.8rem 4rem;
+		font-size: 1.8rem;
+		font-weight: 500;
+		margin-top: $s-size;
+		box-shadow: $box-shadow;
+		border-radius: 0.3rem;
+		border: none;
+	}
+	&__add {
+		text-decoration: none;
+		&:focus {
+			box-shadow: none;
+			transform: translateY(0.2rem);
+		}
+	}
+	&__remove {
+		background-color: $color_red_pink_01;
+	}
+}
