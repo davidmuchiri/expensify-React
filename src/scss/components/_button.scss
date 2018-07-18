@@ -32,10 +32,6 @@
 	}
 	&__add {
 		text-decoration: none;
-		&:focus {
-			box-shadow: none;
-			transform: translateY(0.2rem);
-		}
 	}
 	&__remove {
 		background-color: $color_red_pink_01;
