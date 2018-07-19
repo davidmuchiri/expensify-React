@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { DateRangePicker } from "react-dates";
 import "react-dates/lib/initialize";
-import FaSearch from "react-icons/lib/md/search";
 import FaArrowDown from "react-icons/lib/md/keyboard-arrow-down";
 import {
 	setTextFilter,
